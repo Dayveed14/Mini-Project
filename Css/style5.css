@@ -1,0 +1,103 @@
+body {
+    background:url('../img/bg.jpg') no-repeat 0% 87% fixed;
+    background-size: cover;
+  font-family: 'Lato', sans-serif;
+  text-align:center;
+}
+header {
+  position: fixed;
+  text-align: right;
+  line-height: 50px;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #333;
+  background-image:none;
+  background-origin:padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat-x: ;
+  background-repeat-y: ;
+  background-size: auto ;
+  box-sizing: border-box ;
+  color: white ;
+  display: block;
+  height:50px;
+  left: 0px ;
+  margin-bottom:0px;
+  margin: 0px 0px 0px 0px;
+  min-height: 40px;
+  overflow-x: hidden;
+  overflow-y:hidden ;
+  padding:0px 0px 0px 0px;
+  right:0px;
+  top:0px;
+  width: auto ;
+  z-index: 3000;
+}
+header a {
+  display: inline-block;
+  width: 130px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+}
+header a:hover {
+  background-color: #4759A9;
+  color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:#D5DDE5;;
+    background:#1b1e24;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:23px;
+    font-weight: 100;
+    padding:24px;
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+}
+}
+thead,th,td {
+    padding: 5px;
+}
+table,thead,th {
+    background-color: black;
+    color: white;
+}
+table {
+    width: auto;
+    background-color: rgb(50, 98, 149);
+}
+ table.center{
+  margin-left:auto; 
+  margin-right:auto;
+}
+.contain{
+  margin-top: 50px;
+}
+.form1 input[type="button"]{
+    background: #333;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px, serif;
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid grey;
+    font-size: 15px;
+    cursor: pointer;
+} 
+.form1 input[type="button"]:hover{
+    background: grey;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
