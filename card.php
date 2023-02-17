@@ -1,39 +1,39 @@
 <?php include 'include/db.php'; ?>
-<?php session_start(); 
+<?php session_start();
 
-if(empty($_SESSION)){
+if (empty($_SESSION)) {
 
- header("location:logout.php");
-} else{
-?>
-<!DOCTYPE html>
-<html>
+  header("location:logout.php");
+} else {
+  ?>
+  <!DOCTYPE html>
+  <html>
 
-<head>
-  <title>Credit Card</title>
+  <head>
+    <title>Credit Card</title>
 
-  <!-- Styles -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/style7.css">
-  <meta name="robots" content="noindex,follow" />
-</head>
+    <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style7.css">
+    <meta name="robots" content="noindex,follow" />
+  </head>
 
-<body>
+  <body>
     <div>
-    <header>
-      <a href = 'Dashboard1.php'>Home</a>
-          <a href = 'logout.php'>Log out</a>
-        </header>
+      <header>
+        <a href='Dashboard1.php'>Home</a>
+        <a href='logout.php'>Log out</a>
+      </header>
     </div>
-    <form class="credit-card" method = 'POST' action = 'Include/process3.php'>
+    <form class="credit-card" method='POST' action='Include/process3.php'>
       <div class="form-header">
-       <h4 class="title"> Enter Credit card detail</h4>
+        <h4 class="title"> Enter Credit card detail</h4>
       </div>
 
       <div class="form-body">
         <!-- Card Number -->
         <input type="text" class="card-number" placeholder="Card Number" name='cardnumber'>
-        <input type='hidden' name='regno' value="<?php echo $_SESSION["number"];?>"/>
+        <input type='hidden' name='regno' value="<?php echo $_SESSION["number"]; ?>" />
 
         <!-- Date Field -->
         <div class="date-field">
@@ -71,7 +71,7 @@ if(empty($_SESSION)){
         <!-- Card Verification Field -->
         <div class="card-verification">
           <div class="cvv-input">
-            <input type="text" placeholder="CVV" name = "cvv">
+            <input type="text" placeholder="CVV" name="cvv">
           </div>
           <div class="cvv-details">
             <p>3 or 4 digits usually found <br> on the signature strip</p>
@@ -82,7 +82,7 @@ if(empty($_SESSION)){
         <button type="submit" class="proceed-btn" name='submit1'>Proceed</button>
       </div>
     </form>
-</body>
+  </body>
 
-</html>
+  </html>
 <?php } ?>

@@ -4,22 +4,22 @@ session_start();
 $user = $_SESSION["FName"];
 $password = md5($_SESSION["password"]);
 if ($user) {
-    if (isset($_POST['submit'])){
+	if (isset($_POST['submit'])) {
 
-    	$oldpassword = md5($_POST['oldpassword']);
+		$oldpassword = md5($_POST['oldpassword']);
 		$newpassword = md5($_POST['newpassword']);
 		$repeatnewpassword = md5($_POST['repeatnewpassword']);
 
-       include ('Include/db.php');
+		include('Include/db.php');
 
-        $sql = "SELECT PASSWORD FROM users WHERE USERNAME = '$user' limit 1";
+		$sql = "SELECT PASSWORD FROM users WHERE USERNAME = '$user' limit 1";
 		$result = $conn->query($sql);
 
 		$oldpassword = $password;
 
-		if ($oldpassword==$password){
+		if ($oldpassword == $password) {
 
-			if ($newpassword==$repeatnewpassword){
+			if ($newpassword == $repeatnewpassword) {
 
 				$sql = "UPDATE users SET PASSWORD = '$newpassword' WHERE FIRSTNAME = '$user'";
 				$result = $conn->query($sql);
@@ -28,17 +28,14 @@ if ($user) {
 
 				echo "Your password has been changed.<a href='Dashboard1.php'>Return</a> to the main page";
 
-			}
-			else die("New passwords dont match");
+			} else
+				die("New passwords dont match");
 
 
-		}
-
-		else die("Old paswords dont match <a href='Dashboard1.php'>Return</a> to the main page");
-	}
-
-	else {
-		echo"
+		} else
+			die("Old paswords dont match <a href='Dashboard1.php'>Return</a> to the main page");
+	} else {
+		echo "
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -77,9 +74,8 @@ if ($user) {
 		";
 	}
 
-}
- else
- 	die("You must be logged in to change your password");
+} else
+	die("You must be logged in to change your password");
 
 
 

@@ -1,38 +1,40 @@
 <?php include 'include/db.php'; ?>
 
-<?php session_start(); 
+<?php session_start();
 
-if(empty($_SESSION)){
+if (empty($_SESSION)) {
 
- header("location:logout.php");
-} else{
-?>
+  header("location:logout.php");
+} else {
+  ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Students</title>
-  <link href="Css\style5.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300"/>
-</head>
-<body>
-  <div class = "head">
-    <header>
-      <a href = "Dashboard2.php">Home</a>
-      <a  href="showstudents.php" class="current">Students</a>
-      <a href = "logout.php">Log out</a>
-    </header>
+  <!DOCTYPE html>
+  <html>
 
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Students</title>
+    <link href="Css\style5.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" />
+  </head>
 
-  <?php
-  $sql = "SELECT paid.paidid, users.FIRSTNAME, users.LASTNAME, users.REGISTRATIONNUMBER,
+  <body>
+    <div class="head">
+      <header>
+        <a href="Dashboard2.php">Home</a>
+        <a href="showstudents.php" class="current">Students</a>
+        <a href="logout.php">Log out</a>
+      </header>
+
+    </div>
+
+    <?php
+    $sql = "SELECT paid.paidid, users.FIRSTNAME, users.LASTNAME, users.REGISTRATIONNUMBER,
   paid.status, paid.phonenumber FROM users INNER JOIN paid ON users.PHONENUMBER = paid.phonenumber";
-  $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    echo "
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+      echo "
     <div class = 'container'>
     <h3 align = 'center'>Paid Students</h3>
     <br />
@@ -49,33 +51,33 @@ if(empty($_SESSION)){
     </tr>
     </thead>";
 
-    while($row = $result->fetch_assoc()){
-      echo "
+      while ($row = $result->fetch_assoc()) {
+        echo "
       <tr>
-      <td>". $row["paidid"]. "</td>
-      <td>". $row["FIRSTNAME"]. "</td>
-      <td>". $row["LASTNAME"]. "</td>
-      <td>". $row["REGISTRATIONNUMBER"]. "</td>
-      <td>". $row["status"]. "</td>
-      <td>". $row["phonenumber"]. "</td>
+      <td>" . $row["paidid"] . "</td>
+      <td>" . $row["FIRSTNAME"] . "</td>
+      <td>" . $row["LASTNAME"] . "</td>
+      <td>" . $row["REGISTRATIONNUMBER"] . "</td>
+      <td>" . $row["status"] . "</td>
+      <td>" . $row["phonenumber"] . "</td>
       </tr>
       ";
+      }
+      echo "</table>";
+    } else {
+      echo "0 results";
     }
-    echo "</table>";
-  }
-  else {
-    echo "0 results";
-  }
-  ?>
-  <div class='form1'>
-    <form>
-      <div class='button-section'>
-        <input type="button" onclick="window.print()" value="Print Receipt" />
-      </div>
-    </form>
-  </div>
+    ?>
+    <div class='form1'>
+      <form>
+        <div class='button-section'>
+          <input type="button" onclick="window.print()" value="Print Receipt" />
+        </div>
+      </form>
+    </div>
 
-</body>
-</html>
+  </body>
+
+  </html>
 
 <?php } ?>
